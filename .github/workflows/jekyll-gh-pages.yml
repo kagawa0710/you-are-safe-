@@ -37,6 +37,7 @@ jobs:
 
       - name: Build
         run: |
+          cd ..
           yarn build
 
       - name: deploy
