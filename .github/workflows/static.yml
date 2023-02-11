@@ -38,9 +38,7 @@ jobs:
         # となるので、envを追加してviteのベースパスを変えるように設定します。
         env:
           GITHUB_PAGES: true
-        env:
           VITE_SUPABASE_KEY: ${{ secrets.VITE_SUPABASE_KEY }}
-        env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
