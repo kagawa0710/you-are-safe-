@@ -39,12 +39,10 @@ jobs:
       - name: Install Dependencies
         run: |
           yarn install
-        working-directory: app
 
       - name: Build
         run: |
           yarn build
-        working-directory: dist
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
