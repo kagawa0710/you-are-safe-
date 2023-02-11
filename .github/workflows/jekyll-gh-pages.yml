@@ -33,11 +33,11 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
+          yarn install
 
       - name: Build
         run: |
-          npm run build
+          yarn build
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
