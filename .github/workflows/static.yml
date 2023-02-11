@@ -36,10 +36,11 @@ jobs:
         run: yarn build
         # GIthubページは https://USERNAME.github.io/REPOSITORY_NAME/
         # となるので、envを追加してviteのベースパスを変えるように設定します。
-      - name: env  
         env:
           GITHUB_PAGES: true
+        env:
           VITE_SUPABASE_KEY: ${{ secrets.VITE_SUPABASE_KEY }}
+        env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
