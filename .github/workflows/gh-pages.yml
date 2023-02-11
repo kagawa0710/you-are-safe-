@@ -23,6 +23,8 @@ concurrency:
 jobs:
   # Build job
   build-deploy:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
