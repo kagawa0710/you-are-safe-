@@ -9,7 +9,8 @@ import App from "./App";
 ReactDOM.render(
   <StrictMode>
     {/* <ColorModeScript /> */}
-    <App />
+    {/* <App /> */}
+    <>Hello</>
   </StrictMode>,
   document.getElementById("root")
 );
