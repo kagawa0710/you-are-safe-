@@ -18,12 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create dot env file
-      - shell: bash
-        run: |
-          touch .env
-          echo "VITE_SUPABASE_KEY=${{ secrets.VITE_SUPABASE_KEY }}" >> .env
-          echo "VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}" >> .env
+      - name: Hello world action
+        env: # Or as an environment variable
+          VITE_SUPABASE_KEY: ${{ secrets.VITE_SUPABASE_KEY }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node
