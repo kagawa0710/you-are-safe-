@@ -44,8 +44,6 @@ jobs:
         run: |
           npm run build
         working-directory: src
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
 
   # Deployment job
   deploy:
