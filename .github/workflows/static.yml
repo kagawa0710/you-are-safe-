@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello world action
+        with: # Set the secret as an input
+          VITE_SUPABASE_KEY: ${{ secrets.VITE_SUPABASE_KEY }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
         env: # Or as an environment variable
           VITE_SUPABASE_KEY: ${{ secrets.VITE_SUPABASE_KEY }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
