@@ -15,8 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  env:
     steps:
       - name: Hello world action
         with: # Set the secret as an input
@@ -25,6 +24,10 @@ jobs:
         env: # Or as an environment variable
           VITE_SUPABASE_KEY: ${{ secrets.VITE_SUPABASE_KEY }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node
