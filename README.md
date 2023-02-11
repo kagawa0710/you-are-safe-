@@ -1,11 +1,5 @@
-# Full-stack real-time chat
-
-- **Data:** PostgeSQL managed by [Supabase](https://supabase.io/) [@supabase_io](https://twitter.com/supabase_io) (awsome real-time API).
-- **Front-end**: React + Vite
-- **UI library**: [chakra-ui](https://chakra-ui.com/) [@chakra_ui](https://twitter.com/chakra_ui)
-- **Hosting**: [Netlify](https://www.netlify.com/)
-- Country flags from [Flagpedia](https://flagpedia.net)
-
+# you-are-safe
+cloned by https://github.com/shwosner/realtime-chat-supabase-react
 ## Install
 
 `npm install` to setup dependencies
@@ -40,10 +34,6 @@ CREATE TABLE messages (
 );
 ```
 
-## Setup GitHub authentication (optional)
-
-Follow instrunction [here](https://supabase.io/docs/guides/auth/auth-github)
-
 ## Dev
 
 `npm run dev` to run server on port 3000
@@ -51,11 +41,3 @@ Follow instrunction [here](https://supabase.io/docs/guides/auth/auth-github)
 ## Build
 
 `npm run build` to build the react client
-
-# Demo
-
-[https://random-chat.netlify.app](https://random-chat.netlify.app/)
-
-!['demo'](https://random-chat.netlify.app/demo.png "demo")
-# you-are-safe-
-# you-are-safe-
