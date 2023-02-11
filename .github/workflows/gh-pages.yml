@@ -11,18 +11,9 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  Actions: read
-  Checks: read
-  Contents: read
-  Deployments: read
-  Discussions: read
-  Issues: read
-  Metadata: read
-  Packages: read
-  PullRequests: read
-  RepositoryProjects: read
-  SecurityEvents: read
-  Statuses: read
+  contents: read
+  pages: write
+  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
