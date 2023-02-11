@@ -18,6 +18,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Create dot env file
+      - shell: bash
+        run: |
+          touch .env
+          echo "VITE_SUPABASE_KEY=${{ secrets.VITE_SUPABASE_KEY }}" >> .env
+          echo "VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}" >> .env
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node
@@ -26,13 +32,6 @@ jobs:
           node-version: 18
           # yarnのキャッシュを効かすために設定 (npmのかたはnpmで)
           cache: yarn
-
-      # - name: Create dot env file
-      # - shell: bash
-      #   run: |
-      #     touch .env
-      #     echo "VITE_SUPABASE_KEY=${{ secrets.VITE_SUPABASE_KEY }}" >> .env
-      #     echo "VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}" >> .env
       - name: yarn install
         run: yarn install
       - name: yarn build
