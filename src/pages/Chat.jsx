@@ -1,7 +1,7 @@
 import { Badge, Box, Container } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useAppContext } from "../context/appContext";
-import Messages from "./Messages";
+import Messages from "../components/Messages";
 import { BsChevronDoubleDown } from "react-icons/bs";
 
 export default function Chat() {

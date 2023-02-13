@@ -2,8 +2,9 @@ import { ChakraProvider, Box, theme } from "@chakra-ui/react";
 // import { ColorModeSwitcher } from "./components/ColorModeSwitcher";
 import "./App.css";
 import Header from "./layout/Header";
-import Footer from "./layout/Footer";
-import Chat from "./components/Chat";
+import MessageForm from "./components/MessageForm";
+import Chat from "./pages/Chat";
+import List from "./pages/List";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AppContextProvider, useAppContext } from "./context/appContext";
 
@@ -31,10 +32,13 @@ function App() {
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
           <Router>
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/Chat">
                 <Header username={username} setUsername={setUsername} />
                 <Chat username={username} />
-                <Footer username={username} />
+                <MessageForm />
+              </Route>
+              <Route exact path="/">
+                <List />
               </Route>
               <Route>Not found</Route>
             </Switch>
