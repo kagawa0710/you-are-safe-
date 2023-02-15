@@ -1,10 +1,10 @@
-// 一覧ページ　'/'にアクセスしたときに表示されるページ
+// 一覧ページ　'detail/{id}'にアクセスしたときに表示されるページ
 
 import { Switch, Box, FormControl, FormLabel } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useAppContext } from "../context/appContext";
 
-export default function List() {
+export default function Detail() {
   const [height, setHeight] = useState(window.innerHeight - 205);
   const {
     scrollRef,
@@ -27,7 +27,7 @@ export default function List() {
         ref={scrollRef}
       >
 
-        <div>一覧だよ</div>
+        <div>詳細ページだよ</div>
       </Box>    
   );
 }
