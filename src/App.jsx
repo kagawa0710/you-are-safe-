@@ -1,15 +1,30 @@
 import { ChakraProvider, Box, theme } from "@chakra-ui/react";
 // import { ColorModeSwitcher } from "./components/ColorModeSwitcher";
+import {useEffect, useState} from 'react';
 import "./App.css";
 import Header from "./layout/Header";
 import MessageForm from "./components/MessageForm";
 import Chat from "./pages/Chat";
 import List from "./pages/List";
+import Post from "./pages/Post";
+import Detail from "./pages/Detail";
+import MyPage from "./pages/MyPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AppContextProvider, useAppContext } from "./context/appContext";
 
 function App() {
   const { username, setUsername, routeHash } = useAppContext();
+
+    // resident(住民) or association(自治会) => Headerにpropsで渡して切り替える
+    const [attribute, setAttribute] = useState('residents');
+    function handleChange(e) {
+      setAttribute(attribute === 'association' ? 'residents' : 'association')
+    }
+    useEffect(() => {
+      window.addEventListener("resize", () => {
+        setHeight(window.innerHeight - 205);
+      });
+    }, []);
 
   if (routeHash) {
     if (routeHash.endsWith("&type=recovery")) {
@@ -26,20 +41,37 @@ function App() {
       );
   }
   return (
+    // 若者を表示するか、高齢者を表示するか
+    // {
+    //   (attribute === 'association') && <Elderly/>
+    // }
+    // {
+    //   (attribute === 'residents') && <Young/>
+    // }
     <ChakraProvider theme={theme}>
       <AppContextProvider>
         <Box bg="gray.100">
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
+          <Header username={username} setUsername={setUsername} />
           <Router>
             <Switch>
-              <Route exact path="/Chat">
-                <Header username={username} setUsername={setUsername} />
-                <Chat username={username} />
-                <MessageForm />
-              </Route>
               <Route exact path="/">
                 <List />
               </Route>
+              <Route exact path="/detail">
+                <Detail />
+              </Route>
+              <Route exact path="/post">
+                <Post />
+              </Route>
+              <Route exact path="/my-page">
+                <MyPage />
+              </Route>
+              <Route exact path="/chat">
+                <Chat username={username} />
+                <MessageForm />
+              </Route>
+
               <Route>Not found</Route>
             </Switch>
           </Router>
