@@ -13,7 +13,6 @@ export default function Post() {
     register,
     formState: { errors, isSubmitting },
   } = useForm();
-  console.log("errors", errors);
   const onSubmit = () => {
     console.log("hello!");
   };
