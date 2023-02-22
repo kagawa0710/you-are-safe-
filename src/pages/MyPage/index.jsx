@@ -20,6 +20,8 @@ import {
   ButtonGroup,
   Flex,
   Spacer,
+  // Card
+  // CardHeader, CardBody, CardFooter
 } from "@chakra-ui/react";
 
 import { FaRegEnvelope, FaLock, FaRegUser, FaEdit } from "react-icons/fa";
@@ -54,9 +56,22 @@ export default function MyPage() {
         </Stack>
 
         <Box bg="secondary.card" rounded="lg" p={5}>
-          <Stack spacing={4} marginBottom="1rem">
+          {/* <Card align="center">
+            <CardHeader>
+              <Heading size="md"> Customer dashboard</Heading>
+            </CardHeader>
+            <CardBody>
+              <Text>
+                View a summary of all your customers over the last month.
+              </Text>
+            </CardBody>
+            <CardFooter>
+              <Button colorScheme="blue">View here</Button>
+            </CardFooter>
+          </Card> */}
+          <Stack marginBottom="1rem">
             <div class="event_list vevent">
-              <Flex m={3}>
+              <Flex>
                 <div class="event_schedule_area">
                   <p class="year">2023</p>
                   <p class="date">02/11</p>
