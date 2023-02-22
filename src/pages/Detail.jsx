@@ -28,6 +28,7 @@ export default function Detail() {
       <Box
           bg="white"
           p="5"
+          pb="24"
           overflow="auto"
           borderRadius="10px"
           // height={height}
