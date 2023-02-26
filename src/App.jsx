@@ -1,6 +1,6 @@
 import { ChakraProvider, Box, theme } from "@chakra-ui/react";
 // import { ColorModeSwitcher } from "./components/ColorModeSwitcher";
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./layout/Header";
 import MessageForm from "./components/MessageForm";
@@ -9,22 +9,23 @@ import List from "./pages/List";
 import Post from "./pages/Post";
 import Detail from "./pages/Detail";
 import MyPage from "./pages/MyPage";
+import TestTesseract from "./pages/TestTesseract";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AppContextProvider, useAppContext } from "./context/appContext";
 
 function App() {
   const { username, setUsername, routeHash } = useAppContext();
 
-    // resident(住民) or association(自治会) => Headerにpropsで渡して切り替える
-    const [attribute, setAttribute] = useState('residents');
-    function handleChange(e) {
-      setAttribute(attribute === 'association' ? 'residents' : 'association')
-    }
-    useEffect(() => {
-      window.addEventListener("resize", () => {
-        setHeight(window.innerHeight - 205);
-      });
-    }, []);
+  // resident(住民) or association(自治会) => Headerにpropsで渡して切り替える
+  const [attribute, setAttribute] = useState("residents");
+  function handleChange(e) {
+    setAttribute(attribute === "association" ? "residents" : "association");
+  }
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setHeight(window.innerHeight - 205);
+    });
+  }, []);
 
   if (routeHash) {
     if (routeHash.endsWith("&type=recovery")) {
@@ -71,7 +72,9 @@ function App() {
                 <Chat username={username} />
                 <MessageForm />
               </Route>
-
+              <Route exact path="/test">
+                <TestTesseract />
+              </Route>
               <Route>Not found</Route>
             </Switch>
           </Router>
