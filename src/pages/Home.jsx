@@ -6,7 +6,6 @@ export default function Home() {
     return null;
   }
   const task = tasks()[0];
-  const path = `/detail/${task.id}`;
 
   return (
     <>
@@ -23,7 +22,7 @@ export default function Home() {
           </Button>
         </Box>
         <Box mt={4} mx={4}>
-          <Link key={task.id} href={path}>
+          <Link key={task.id} href={`/detail/${task.id}`}>
             <Box border="1px solid" borderRadius={8} p={4}>
               <Flex>
                 <Image
