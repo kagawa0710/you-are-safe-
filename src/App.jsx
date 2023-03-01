@@ -6,6 +6,7 @@ import Header from "./layout/Header";
 import MessageForm from "./components/MessageForm";
 import Chat from "./pages/Chat";
 import List from "./pages/List";
+import Home from "./pages/Home";
 import Post from "./pages/Post";
 import Detail from "./pages/Detail";
 import MyPage from "./pages/MyPage";
@@ -51,7 +52,7 @@ function App() {
     // }
     <ChakraProvider theme={theme}>
       <AppContextProvider>
-        <Box bg="gray.100">
+        <Box>
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
           <Header username={username} setUsername={setUsername} />
           <Router>
@@ -59,7 +60,10 @@ function App() {
               <Route exact path="/">
                 <List />
               </Route>
-              <Route exact path="/detail">
+              <Route exact path="/home">
+                <Home />
+              </Route>
+              <Route exact path="/detail/:id">
                 <Detail />
               </Route>
               <Route exact path="/post">
