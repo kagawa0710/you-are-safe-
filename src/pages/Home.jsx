@@ -32,13 +32,15 @@ export default function Home() {
                   objectFit="cover"
                   height="100px"
                 />
-                <Flex direction="column">
-                  <Text fontSize="4xl">{task.title}</Text>
+                <Flex direction="column" marginLeft={4}>
+                  <Text fontSize="4xl" fontWeight="bold">
+                    {task.title}
+                  </Text>
                   <Flex>
-                    <Text fontSize="xl" marginRight="4px">
+                    <Text fontSize="lg" marginRight="4px">
                       {task.startAt}
                     </Text>
-                    <Text fontSize="xl">{task.reward}円</Text>
+                    <Text fontSize="lg">{task.reward}円</Text>
                   </Flex>
                 </Flex>
               </Flex>
