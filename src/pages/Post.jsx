@@ -1,8 +1,8 @@
 // 依頼作成（・確認）　'/post'にアクセスしたときに表示されるページ
 
 import { useForm } from "react-hook-form";
-import { FormErrorMessage, Box, FormControl, FormLabel, Input, Button, Heading, Select } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { FormErrorMessage, Box, FormControl, FormLabel, Input, Text, Button, Textarea, Select, Flex } from "@chakra-ui/react";
+import { useState } from "react";
 import { useAppContext } from "../context/appContext";
 
 export default function Post() {
@@ -20,10 +20,16 @@ export default function Post() {
 
   return (
     <Box bg="white" p="5" overflow="auto" borderRadius="10px" height={height} onScroll={onScroll} ref={scrollRef}>
-      <Heading>依頼作成</Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl isInvalid={errors.title}>
-          <FormLabel htmlFor="title">タイトル</FormLabel>
+          <Flex>
+            <FormLabel htmlFor="title" fontSize="2xl" fontWeight="bold">
+              タイトル
+            </FormLabel>
+            <Text color="red" fontSize="2xl">
+              ＊必須
+            </Text>
+          </Flex>
           <Input
             id="title"
             {...register("title", {
@@ -32,8 +38,15 @@ export default function Post() {
           />
           <FormErrorMessage>{errors.title && errors.title.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.image}>
-          <FormLabel htmlFor="image">画像</FormLabel>
+        <FormControl isInvalid={errors.image} marginTop={8}>
+          <Flex>
+            <FormLabel htmlFor="title" fontSize="2xl" fontWeight="bold">
+              画像
+            </FormLabel>
+            <Text color="red" fontSize="2xl">
+              ＊必須
+            </Text>
+          </Flex>
           <Input
             id="image"
             {...register("image", {
@@ -42,18 +55,23 @@ export default function Post() {
           />
           <FormErrorMessage>{errors.image && errors.image.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.author}>
-          <FormLabel htmlFor="author">作成者</FormLabel>
-          <Input
-            id="author"
-            {...register("author", {
-              required: "必須項目です",
-            })}
-          />
-          <FormErrorMessage>{errors.author && errors.author.message}</FormErrorMessage>
+        <FormControl marginTop={8}>
+          <Flex>
+            <FormLabel htmlFor="title" fontSize="2xl" fontWeight="bold">
+              作成者
+            </FormLabel>
+          </Flex>
+          <Input id="author" {...register("author")} />
         </FormControl>
-        <FormControl isInvalid={errors.reward}>
-          <FormLabel htmlFor="reward">報酬</FormLabel>
+        <FormControl isInvalid={errors.reward} marginTop={8}>
+          <Flex>
+            <FormLabel htmlFor="title" fontSize="2xl" fontWeight="bold">
+              報酬
+            </FormLabel>
+            <Text color="red" fontSize="2xl">
+              ＊必須
+            </Text>
+          </Flex>
           <Input
             id="reward"
             {...register("reward", {
@@ -62,8 +80,15 @@ export default function Post() {
           />
           <FormErrorMessage>{errors.reward && errors.reward.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.recruitNum}>
-          <FormLabel htmlFor="recruitNum">募集人数</FormLabel>
+        <FormControl isInvalid={errors.recruitNum} marginTop={8}>
+          <Flex>
+            <FormLabel htmlFor="title" fontSize="2xl" fontWeight="bold">
+              募集人数
+            </FormLabel>
+            <Text color="red" fontSize="2xl">
+              ＊必須
+            </Text>
+          </Flex>
           <Input
             id="recruitNum"
             {...register("recruitNum", {
@@ -76,9 +101,16 @@ export default function Post() {
           />
           <FormErrorMessage>{errors.recruitNum && errors.recruitNum.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.desc}>
-          <FormLabel htmlFor="desc">募集の説明</FormLabel>
-          <Input
+        <FormControl isInvalid={errors.desc} marginTop={8}>
+          <Flex>
+            <FormLabel htmlFor="title" fontSize="2xl" fontWeight="bold">
+              募集の説明
+            </FormLabel>
+            <Text color="red" fontSize="2xl">
+              ＊必須
+            </Text>
+          </Flex>
+          <Textarea
             id="desc"
             {...register("desc", {
               required: "必須項目です",
@@ -86,8 +118,15 @@ export default function Post() {
           />
           <FormErrorMessage>{errors.desc && errors.desc.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.phoneNumber}>
-          <FormLabel htmlFor="phoneNumber">緊急連絡先</FormLabel>
+        <FormControl isInvalid={errors.phoneNumber} marginTop={8}>
+          <Flex>
+            <FormLabel htmlFor="title" fontSize="2xl" fontWeight="bold">
+              緊急連絡先
+            </FormLabel>
+            <Text color="red" fontSize="2xl">
+              ＊必須
+            </Text>
+          </Flex>
           <Input
             id="phoneNumber"
             {...register("phoneNumber", {
@@ -96,8 +135,12 @@ export default function Post() {
           />
           <FormErrorMessage>{errors.phoneNumber && errors.desc.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.tag}>
-          <FormLabel htmlFor="tag">タグ</FormLabel>
+        <FormControl isInvalid={errors.tag} marginTop={8}>
+          <Flex>
+            <FormLabel htmlFor="title" fontSize="2xl" fontWeight="bold">
+              タグ
+            </FormLabel>
+          </Flex>
           <Select
             placeholder="選択してください"
             id="tag"
@@ -111,9 +154,11 @@ export default function Post() {
           </Select>
           <FormErrorMessage>{errors.tag && errors.tag.message}</FormErrorMessage>
         </FormControl>
-        <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
-          保存する
-        </Button>
+        <Flex justifyContent="center" marginTop={8}>
+          <Button mt={4} colorScheme="orange" width="200px" height="50px" isLoading={isSubmitting} type="submit">
+            <Text fontSize="2xl">投稿する</Text>
+          </Button>
+        </Flex>
       </form>
     </Box>
   );
