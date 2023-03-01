@@ -11,14 +11,18 @@ export default function Home() {
     <>
       <SimpleGrid columns={1} spacing={10}>
         <Box mt={4} mx={4}>
-          <Button colorScheme="orange" width="full" height="150px" marginBottom="24px">
-            <Text fontSize="5xl">募集作成</Text>
-          </Button>
+          <Link href={`/post`}>
+            <Button colorScheme="orange" width="full" height="150px" marginBottom="24px">
+              <Text fontSize="5xl">募集作成</Text>
+            </Button>
+          </Link>
           <Button colorScheme="teal" width="full" height="150px">
-            <Flex direction="column">
-              <Text fontSize="5xl">作成した</Text>
-              <Text fontSize="5xl">募集一覧</Text>
-            </Flex>
+            <Link href={`/created-tasks`}>
+              <Flex direction="column">
+                <Text fontSize="5xl">作成した</Text>
+                <Text fontSize="5xl">募集一覧</Text>
+              </Flex>
+            </Link>
           </Button>
         </Box>
         <Box mt={4} mx={4}>
