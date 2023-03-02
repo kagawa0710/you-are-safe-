@@ -1,5 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { toMonthAndDayJP } from "../../libs/date"
+import { iconSrc } from "../../icons/task"
 
 export function Task({
   title,
@@ -14,11 +15,11 @@ export function Task({
       <Flex>
         <Box fontSize={12} my='auto'>{toMonthAndDayJP(startAt)}</Box>
         <Box fontSize={16} ml={8}>{title}</Box>
-        <Box fontSize={16} ml='auto'>報酬: ￥{reward}</Box>
+        <Box fontSize={14} ml='auto' my='auto'>￥{reward}</Box>
       </Flex>
       <Flex mt={2}>
-        <Box w='44px' h='44px' bg={'gray'}>
-          iconicon
+        <Box minW='44px'>
+          <img src={iconSrc(iconId)} />
         </Box>
         <Box ml={7}>
           <Box fontSize={12}>

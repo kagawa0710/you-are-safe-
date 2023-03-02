@@ -40,7 +40,7 @@ export default function tasks() {
       desc: '区では、区内で自主的に防犯・防火に関わるパトロール活動を実施している団体の皆様を支援するため、パトロール団体登録制度を設けています。',
       durationTime: 60,
       phoneNumber: '03-1234-5678',
-      iconId: 1,
+      iconId: 2,
     },
     {
       id: 3,
@@ -110,7 +110,7 @@ export default function tasks() {
       desc: '区では、区内で自主的に防犯・防火に関わるパトロール活動を実施している団体の皆様を支援するため、パトロール団体登録制度を設けています。',
       durationTime: 60,
       phoneNumber: '03-1234-5678',
-      iconId: 1,
+      iconId: 2,
     },
     {
       id: 8,
@@ -124,7 +124,7 @@ export default function tasks() {
       desc: '区では、区内で自主的に防犯・防火に関わるパトロール活動を実施している団体の皆様を支援するため、パトロール団体登録制度を設けています。',
       durationTime: 60,
       phoneNumber: '03-1234-5678',
-      iconId: 1,
+      iconId: 2,
     },
   ]
 }

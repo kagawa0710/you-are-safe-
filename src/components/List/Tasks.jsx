@@ -11,7 +11,7 @@ export function Tasks({
   return tasks.map((task) => {
     const path = `/detail/${task.id}`
     return (
-      <Box mt={4} mx={4}>
+      <Box mt={2} mx={4}>
         <Link key={task.id} href={path}>
           <Task
             title={task.title}
