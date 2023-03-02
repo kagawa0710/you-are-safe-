@@ -16,10 +16,10 @@ export function Tasks({
           <Task
             title={task.title}
             startAt={task.startAt}
-            durationTime={task.durationTime}
+            desc={task.desc}
             meetingPlace={task.meetingPlace}
             reward={task.reward}
-            tagId={task.tagId}
+            iconId={task.iconId}
           />
         </Link>
       </Box>
