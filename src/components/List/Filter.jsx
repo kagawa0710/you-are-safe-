@@ -7,7 +7,7 @@ export function Filter() {
       secondaryButtonTitle='絞り込み'
       backButtonTitle='戻る'
       modalTitle='絞り込み'
-      modalBody='bbbb'
+      modalBody='comming soon!'
     />
   )
 }
