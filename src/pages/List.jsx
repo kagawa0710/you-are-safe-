@@ -8,7 +8,14 @@ export default function List() {
       <Tasks
         tasks={tasks()}
       />
-      <Flex position="sticky" bottom={0} bg="white" p={4} w="full">
+      <Flex
+        position="sticky"
+        bottom={0}
+        bg="white"
+        p={4}
+        w="full"
+        borderTop="4px solid #edf2f7"
+      >
         <Spacer />
         <Box>
           <Filter/>

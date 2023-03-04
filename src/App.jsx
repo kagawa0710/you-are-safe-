@@ -42,6 +42,9 @@ function App() {
         </div>
       );
   }
+
+  const isAssociation = window.location.href.endsWith('/post')
+
   return (
     // 若者を表示するか、高齢者を表示するか
     // {
@@ -54,7 +57,11 @@ function App() {
       <AppContextProvider>
         <Box>
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
-          <Header username={username} setUsername={setUsername} />
+          {/*
+            TODO: とりあえずそれっぽく動くヘッダにしたので、ログインなどができたら戻す
+            <Header username={username} setUsername={setUsername} />
+          */}
+          <Header isAssociation={isAssociation} />
           <Router>
             <Switch>
               <Route exact path="/">
