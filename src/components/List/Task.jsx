@@ -1,6 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { toMonthAndDayJP } from "../../libs/date"
-import { iconSrc } from "../../icons/task"
+import { iconSrc } from "../../libs/icons"
 
 export function Task({
   title,
@@ -28,7 +28,6 @@ export function Task({
           <Box fontSize={12} mt={2}>集合場所: {meetingPlace}</Box>
         </Box>
       </Flex>
-      {/* <Box>タグ: {iconId}</Box> */}
     </Box>
   )
 }
