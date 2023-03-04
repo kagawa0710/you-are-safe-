@@ -13,6 +13,7 @@ export default function tasks() {
       durationTime: 120,
       phoneNumber: '03-1234-5678',
       iconId: 0,
+      reservable: false,
     },
     {
       id: 1,
@@ -27,6 +28,7 @@ export default function tasks() {
       durationTime: 30,
       phoneNumber: '03-4321-8765',
       iconId: 1,
+      reservable: true,
     },
     {
       id: 2,
@@ -41,6 +43,7 @@ export default function tasks() {
       durationTime: 60,
       phoneNumber: '03-1234-5678',
       iconId: 2,
+      reservable: true,
     },
     {
       id: 3,
@@ -55,6 +58,7 @@ export default function tasks() {
       durationTime: 30,
       phoneNumber: '03-4321-8765',
       iconId: 1,
+      reservable: false,
     },
     {
       id: 4,
@@ -69,6 +73,7 @@ export default function tasks() {
       durationTime: 30,
       phoneNumber: '03-4321-8765',
       iconId: 1,
+      reservable: true,
     },
     {
       id: 5,
@@ -83,6 +88,7 @@ export default function tasks() {
       durationTime: 120,
       phoneNumber: '03-1234-5678',
       iconId: 0,
+      reservable: true,
     },
     {
       id: 6,
@@ -97,6 +103,7 @@ export default function tasks() {
       durationTime: 120,
       phoneNumber: '03-1234-5678',
       iconId: 0,
+      reservable: true,
     },
     {
       id: 7,
@@ -111,6 +118,7 @@ export default function tasks() {
       durationTime: 60,
       phoneNumber: '03-1234-5678',
       iconId: 2,
+      reservable: true,
     },
     {
       id: 8,
@@ -125,6 +133,7 @@ export default function tasks() {
       durationTime: 60,
       phoneNumber: '03-1234-5678',
       iconId: 2,
+      reservable: false,
     },
   ]
 }
