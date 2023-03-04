@@ -43,7 +43,16 @@ function App() {
       );
   }
 
-  const isAssociation = window.location.href.endsWith('/post')
+  const isAssociation = () => {
+    if (window.location.href.endsWith('/post')) {
+      return true
+    }
+    if (window.location.href.endsWith('/home')) {
+      return true
+    }
+
+    return false
+  }
 
   return (
     // 若者を表示するか、高齢者を表示するか
@@ -61,7 +70,7 @@ function App() {
             TODO: とりあえずそれっぽく動くヘッダにしたので、ログインなどができたら戻す
             <Header username={username} setUsername={setUsername} />
           */}
-          <Header isAssociation={isAssociation} />
+          <Header isAssociation={isAssociation()} />
           <Router>
             <Switch>
               <Route exact path="/">

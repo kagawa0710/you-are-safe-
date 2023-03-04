@@ -3,10 +3,12 @@ import { Tasks, Filter, Sort } from "../components/List";
 import tasks from "../../data/tasks";
 
 export default function List() {
+  const filteredTasks = tasks().filter(task => task.reservable === true);
+
   return (
     <>
       <Tasks
-        tasks={tasks()}
+        tasks={filteredTasks}
       />
       <Flex
         position="sticky"
