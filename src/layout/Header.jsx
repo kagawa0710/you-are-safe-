@@ -1,6 +1,6 @@
 import { Grid, GridItem, Image, Link } from "@chakra-ui/react";
 
-export default function Header() {
+export default function Header({isAssociation}) {
   const myPagePath = '/my-page'
   const topPath = '/'
 
@@ -20,11 +20,13 @@ export default function Header() {
           <Image src="/service-name.png" height="30px" />
         </Link>
       </GridItem>
-      <GridItem justifySelf="end" mr="4" my="3">
-        <Link href={myPagePath}>
-          <Image src="/sample-user.png" height="30px" />
-        </Link>
-      </GridItem>
+      { !isAssociation &&
+        <GridItem justifySelf="end" mr="4" my="3">
+          <Link href={myPagePath}>
+            <Image src="/sample-user.png" height="30px" />
+          </Link>
+        </GridItem>
+      }
     </Grid>
   );
 }
