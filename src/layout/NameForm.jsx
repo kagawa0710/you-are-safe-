@@ -53,7 +53,7 @@ export default function NameForm() {
           />
         ) : (
           <span onClick={toggleEditing} style={{ cursor: "pointer" }}>
-            <strong>{newUsername}</strong>
+            Welcome <strong>{newUsername}</strong>
           </span>
         )}
         <IconButton
