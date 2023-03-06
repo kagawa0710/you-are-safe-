@@ -10,6 +10,8 @@ import Home from "./pages/Home";
 import Post from "./pages/Post";
 import Detail from "./pages/Detail";
 import MyPage from "./pages/MyPage";
+import CreatedTasks from "./pages/CreatedTasks";
+import CreatedTask from "./pages/CreatedTask";
 import TestTesseract from "./pages/TestTesseract";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AppContextProvider, useAppContext } from "./context/appContext";
@@ -50,6 +52,12 @@ function App() {
     if (window.location.href.endsWith('/home')) {
       return true
     }
+    if (window.location.href.endsWith('/created-tasks')) {
+      return true
+    }
+    if (window.location.href.match(/\/created-task\/\d+$/)) {
+      return true
+    }
 
     return false
   }
@@ -87,6 +95,12 @@ function App() {
               </Route>
               <Route exact path="/my-page">
                 <MyPage />
+              </Route>
+              <Route exact path="/created-tasks">
+                <CreatedTasks />
+              </Route>
+              <Route exact path="/created-task/:id">
+                <CreatedTask />
               </Route>
               <Route exact path="/chat">
                 <Chat username={username} />
