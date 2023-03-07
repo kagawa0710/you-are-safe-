@@ -17,6 +17,15 @@ export default function Post() {
     console.log("hello!");
   };
   const pattern = /^[0-9]+$/;
+  const [image, setImage] = useState();
+  const inputId = Math.random().toString(32).substring(2);
+  const handleOnAddImage = (e) => {
+    if (!e.target.files) return;
+    setImage(e.target.files[0]);
+  };
+  const handleOnRemoveImage = () => {
+    setImage(null);
+  };
 
   return (
     <Box bg="white" p="5" overflow="auto" borderRadius="10px" height={height} onScroll={onScroll} ref={scrollRef}>
@@ -47,12 +56,36 @@ export default function Post() {
               ＊必須
             </Text>
           </Flex>
-          <Input
-            id="image"
-            {...register("image", {
-              required: "必須項目です",
-            })}
-          />
+
+          {!image && (
+            <>
+              <Button aria-label="delete image" onClick={() => document.querySelector('input[type="file"]').click()}>
+                ここを押して登録してください
+              </Button>
+              <input id={inputId} type="file" accept="image/*,.png,.jpg,.jpeg,.gif" onChange={handleOnAddImage} style={{ display: "none" }} />
+            </>
+          )}
+
+          {image && (
+            <Flex direction="column">
+              <img
+                src={URL.createObjectURL(image)}
+                style={{
+                  width: "80%",
+                }}
+              />
+              <Button
+                marginTop={4}
+                aria-label="delete image"
+                onClick={handleOnRemoveImage}
+                style={{
+                  width: "20%",
+                }}
+              >
+                削除
+              </Button>
+            </Flex>
+          )}
           <FormErrorMessage>{errors.image && errors.image.message}</FormErrorMessage>
         </FormControl>
         <FormControl marginTop={8}>
