@@ -18,7 +18,6 @@ export default function Post() {
   };
   const pattern = /^[0-9]+$/;
   const [image, setImage] = useState();
-  const inputId = Math.random().toString(32).substring(2);
   const handleOnAddImage = (e) => {
     if (!e.target.files) return;
     setImage(e.target.files[0]);
@@ -62,7 +61,7 @@ export default function Post() {
               <Button aria-label="delete image" onClick={() => document.querySelector('input[type="file"]').click()} width="100%" height="80px">
                 <Text fontSize="xl">ここを押して登録してください</Text>
               </Button>
-              <input id={inputId} type="file" accept="image/*,.png,.jpg,.jpeg,.gif" onChange={handleOnAddImage} style={{ display: "none" }} />
+              <input id="image" type="file" accept="image/*,.png,.jpg,.jpeg,.gif" onChange={handleOnAddImage} style={{ display: "none" }} />
             </>
           )}
 
