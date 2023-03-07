@@ -59,8 +59,8 @@ export default function Post() {
 
           {!image && (
             <>
-              <Button aria-label="delete image" onClick={() => document.querySelector('input[type="file"]').click()}>
-                ここを押して登録してください
+              <Button aria-label="delete image" onClick={() => document.querySelector('input[type="file"]').click()} width="100%" height="80px">
+                <Text fontSize="xl">ここを押して登録してください</Text>
               </Button>
               <input id={inputId} type="file" accept="image/*,.png,.jpg,.jpeg,.gif" onChange={handleOnAddImage} style={{ display: "none" }} />
             </>
@@ -71,7 +71,7 @@ export default function Post() {
               <img
                 src={URL.createObjectURL(image)}
                 style={{
-                  width: "80%",
+                  width: "100%",
                 }}
               />
               <Button
@@ -79,10 +79,11 @@ export default function Post() {
                 aria-label="delete image"
                 onClick={handleOnRemoveImage}
                 style={{
-                  width: "20%",
+                  width: "100%",
+                  height: "40px",
                 }}
               >
-                削除
+                <Text fontSize="xl">削除</Text>
               </Button>
             </Flex>
           )}
