@@ -90,9 +90,9 @@ export default function Post() {
               ＊必須
             </Text>
           </Flex>
-          <Flex align="center" justify="center" direction="column">
+          <Flex align="start" justify="center" direction="column">
             <Flex>
-              <Flex p="2">
+              <Flex p="2" align="center" justify="center">
                 <Select
                   value={selectedMonth}
                   onChange={(e) => setSelectedMonth(e.target.value)}
@@ -106,9 +106,11 @@ export default function Post() {
                     </option>
                   ))}
                 </Select>
-                <Text fontSize="xl">月</Text>
+                <Text marginLeft={2} fontSize="xl">
+                  月
+                </Text>
               </Flex>
-              <Flex p="2">
+              <Flex p="2" align="center" justify="center">
                 <Select
                   value={selectedDay}
                   onChange={(e) => setSelectedDay(e.target.value)}
@@ -122,11 +124,13 @@ export default function Post() {
                     </option>
                   ))}
                 </Select>
-                <Text fontSize="xl">日</Text>
+                <Text marginLeft={2} fontSize="xl">
+                  日
+                </Text>
               </Flex>
             </Flex>
             <Flex>
-              <Flex p="2">
+              <Flex p="2" align="center" justify="center">
                 <Select
                   value={selectedHour}
                   onChange={(e) => setSelectedHour(e.target.value)}
@@ -140,9 +144,11 @@ export default function Post() {
                     </option>
                   ))}
                 </Select>
-                <Text fontSize="xl">時</Text>
+                <Text marginLeft={2} fontSize="xl">
+                  時
+                </Text>
               </Flex>
-              <Flex p="2">
+              <Flex p="2" align="center" justify="center">
                 <Select
                   value={selectedMinute}
                   onChange={(e) => setSelectedMinute(e.target.value)}
@@ -156,7 +162,9 @@ export default function Post() {
                     </option>
                   ))}
                 </Select>
-                <Text fontSize="xl">分</Text>
+                <Text marginLeft={2} fontSize="xl">
+                  分
+                </Text>
               </Flex>
             </Flex>
           </Flex>
