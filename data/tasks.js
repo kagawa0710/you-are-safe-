@@ -14,6 +14,8 @@ export default function tasks() {
       phoneNumber: '03-1234-5678',
       iconId: 0,
       reservable: false,
+      address: '東京都文京区音羽2-12-21',
+      tags: []
     },
     {
       id: 1,
@@ -29,6 +31,8 @@ export default function tasks() {
       phoneNumber: '03-4321-8765',
       iconId: 1,
       reservable: true,
+      address: '東京都文京区音羽2-12-21',
+      tags: ['見回り']
     },
     {
       id: 2,
@@ -44,6 +48,8 @@ export default function tasks() {
       phoneNumber: '03-1234-5678',
       iconId: 2,
       reservable: true,
+      address: '東京都文京区音羽2-12-21',
+      tags: []
     },
     {
       id: 3,
@@ -59,6 +65,8 @@ export default function tasks() {
       phoneNumber: '03-4321-8765',
       iconId: 1,
       reservable: false,
+      address: '東京都文京区音羽2-12-21',
+      tags: []
     },
     {
       id: 4,
@@ -74,6 +82,8 @@ export default function tasks() {
       phoneNumber: '03-4321-8765',
       iconId: 1,
       reservable: true,
+      address: '東京都文京区音羽2-12-21',
+      tags: []
     },
     {
       id: 5,
@@ -89,6 +99,8 @@ export default function tasks() {
       phoneNumber: '03-1234-5678',
       iconId: 0,
       reservable: true,
+      address: '東京都文京区音羽2-12-21',
+      tags: []
     },
     {
       id: 6,
@@ -104,6 +116,8 @@ export default function tasks() {
       phoneNumber: '03-1234-5678',
       iconId: 0,
       reservable: true,
+      address: '東京都文京区音羽2-12-21',
+      tags: []
     },
     {
       id: 7,
@@ -119,6 +133,8 @@ export default function tasks() {
       phoneNumber: '03-1234-5678',
       iconId: 2,
       reservable: true,
+      address: '東京都文京区音羽2-12-21',
+      tags: []
     },
     {
       id: 8,
@@ -134,6 +150,8 @@ export default function tasks() {
       phoneNumber: '03-1234-5678',
       iconId: 2,
       reservable: false,
+      address: '東京都文京区音羽2-12-21',
+      tags: []
     },
   ]
 }
