@@ -1,4 +1,12 @@
-import { Box } from "@chakra-ui/react";
+import {
+  Table,
+  Tbody,
+  Tr,
+  Td,
+  TableContainer,
+  Box,
+  Button,
+} from '@chakra-ui/react'
 
 export function Task({
   title,
@@ -7,11 +15,32 @@ export function Task({
   reward,
 }) {
   return (
-    <Box border='1px solid' borderRadius={8} p={4} fontSize={20}>
-      <Box>タイトル: {title}</Box>
-      <Box>集合時間: {startAt}</Box>
-      <Box>集合場所: {meetingPlace}</Box>
-      <Box>報酬: {reward}</Box>
+    <Box border='1px solid' fontSize={20}>
+      <TableContainer>
+        <Table variant='simple'>
+          <Tbody>
+            <Tr>
+              <Td>タイトル</Td>
+              <Td>{title}</Td>
+            </Tr>
+            <Tr>
+              <Td>集合時間</Td>
+              <Td>{startAt}</Td>
+            </Tr>
+            <Tr>
+              <Td>集合場所</Td>
+              <Td>{meetingPlace}</Td>
+            </Tr>
+            <Tr>
+              <Td>報酬</Td>
+              <Td>{reward}円</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </TableContainer>
+      <Box textAlign={'right'}>
+        <Button m={4}>詳細を見る</Button>
+      </Box>
     </Box>
   )
 }
