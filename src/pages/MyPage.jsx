@@ -64,9 +64,25 @@ export default function MyPage() {
           お助け予定
         </Heading>
         <Text color="gray.500" fontSize="md">
-          参加登録済みのイベント
+          参加予定(登録済み)のイベント
         </Text>
-        <Tasks tasks={tasks().filter((task) => task.id < 3)} />
+        <div mt={2} mx={4}>
+          <Tasks tasks={tasks().filter((task) => task.id == 3)} />
+        </div>
+        <div mt={2} mx={4}>
+          <Tasks mt={2} mx={4} tasks={tasks().filter((task) => task.id == 4)} />
+        </div>
+      </Stack>
+      <Stack spacing={0} marginTop="2rem" marginBottom="1rem">
+        <Heading as="h4" size="md">
+          お助けログ
+        </Heading>
+        <Text color="gray.500" fontSize="md">
+          参加済みのイベント
+        </Text>
+        <div mt={2} mx={4}>
+          <Tasks mt={2} mx={4} tasks={tasks().filter((task) => task.id == 2)} />
+        </div>
       </Stack>
     </Box>
   );
